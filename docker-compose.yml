@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: postgres:11
+    ports:
+      -"3333:3333"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=54321
+      - POSTGRES_DB=db
+    volumes:
+      - .:app/
+
+  api:
+    restart: on-failure
+    build:
+      context: ./caminho
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgres://admin@54321:3333/db
+      - NODE_ENV: development
+      - PORT: 5000
+    ports:
+      -"5000:5000"
+    
