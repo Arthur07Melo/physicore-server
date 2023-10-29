@@ -1,15 +1,15 @@
-import { Entity } from "../Entity";
+import { Entity, uuid } from "../Entity";
 import { Trainee } from "../trainee/Trainee";
 import { validateEmail, validatePassword } from "../validations";
 
-export interface TrainerProps {
+interface TrainerProps {
     name: string,
     email: string,
     password: string,
-    trainees: string[]
+    trainees: uuid[]
 }
 
-export interface TrainerConstructorProps {
+interface TrainerConstructorProps {
     name: string,
     email: string,
     password: string,
@@ -59,7 +59,7 @@ export class Trainer extends Entity {
         this.props = {
             name: name, 
             email: email, 
-            password:password, 
+            password: password, 
             trainees: [] 
         };
     }
