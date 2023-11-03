@@ -1,6 +1,6 @@
 import { TrainerRepository } from "../../repositories/TrainerRepository"
 
-export class GetTrainer {
+export class GetTrainerById {
     constructor(
         private trainerRepository: TrainerRepository){
     }
