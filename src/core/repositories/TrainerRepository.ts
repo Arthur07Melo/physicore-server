@@ -11,9 +11,9 @@ export interface TrainerRepository{
     getById(id: string): Promise<Trainer | null>;
     getByEmail(email: string): Promise<Trainer | null>;
 
-    create({name, email, password}: TrainerProps): Promise<Trainer | null>;
+    create({name, email, password}: TrainerProps): Promise<Trainer>;
 
-    update(id: string, {name, email, password}: TrainerProps): Promise<Trainer | null>;
+    update(id: string, {name, email, password}: TrainerProps): Promise<Trainer>;
 
     delete(id: string): Promise<null>;
 }
