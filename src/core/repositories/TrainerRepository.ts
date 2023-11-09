@@ -1,3 +1,4 @@
+import { uuid } from "../entities/Entity";
 import { Trainer } from "../entities/trainer/Trainer"
 
 type TrainerProps = {
@@ -8,7 +9,7 @@ type TrainerProps = {
 
 export interface TrainerRepository{
     getAll(): Promise<Trainer[] | null>
-    getById(id: string): Promise<Trainer | null>;
+    getById(id: uuid): Promise<Trainer | null>;
     getByEmail(email: string): Promise<Trainer | null>;
 
     create({name, email, password}: TrainerProps): Promise<Trainer>;
