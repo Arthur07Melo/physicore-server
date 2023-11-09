@@ -7,8 +7,9 @@ type WeightSheetProps = {
 }
 
 export interface WeightSheetRepository {
-    getAllByTrainer(id: uuid): Promise<WeightSheet[] | null>;
-    createWeightSheet(trainerId: uuid, props: WeightSheetProps): Promise<WeightSheet>;
-    updateWeightSheet(trainerId: uuid, props: WeightSheetProps): Promise<WeightSheet>;
-    deleteWeightSheet(sheetId: uuid): Promise<null>;
+    getAllByTrainer(trainerId: uuid): Promise<WeightSheet[] | null>;
+    getSpecificById(trainerId: uuid, id: uuid): Promise<WeightSheet>;
+    create(trainerId: uuid, props: WeightSheetProps): Promise<WeightSheet>;
+    update(trainerId: uuid, props: WeightSheetProps): Promise<WeightSheet>;
+    delete(sheetId: uuid): Promise<null>;
 }
