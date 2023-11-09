@@ -14,7 +14,7 @@ export interface TraineeRepository{
 
     create({name, email, password}: TraineeProps): Promise<Trainee>;
 
-    update(id: string, {name, email, password}: TraineeProps): Promise<Trainee>;
+    update(id: uuid, {name, email, password}: TraineeProps): Promise<Trainee>;
 
-    delete(id: string): Promise<null>;
+    delete(id: uuid): Promise<null>;
 }
